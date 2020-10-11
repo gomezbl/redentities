@@ -1,0 +1,24 @@
+{
+  "name": "redentities",
+  "version": "1.0.0",
+  "description": "Simple & fast ORM and query builder",
+  "main": "lib/redentities.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "shortid": "^2.2.15",
+    "underscore": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gomezbl/redentities.git"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "provider": "mysql", 
+    "host" : "0.0.0.0",
+    "database" : "redentitiestest",
+    "user" : "root", 
+    "password" : "gomezbl1974"
+}
