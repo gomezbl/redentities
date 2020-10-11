@@ -33,6 +33,7 @@ RedEntities is fast, simple and efficient.
 
 ## Defining a model
 A model (data schema), is defined easily with a json object. In this key / value json object, you define the name of the property, its type and its default value. Like this:
+
 ```javascript
 {
     "entities" : [
@@ -49,44 +50,46 @@ A model (data schema), is defined easily with a json object. In this key / value
 }
 ```
 Note: consider this schema for the following documentation. </br>
+
 The are the types supported:
-* string
-* datetime
-* boolean
-* integer
-* float
-* json
+* string, default value: string empty.
+* datetime, default value: current datetime in UTC.
+* boolean, default value: false.
+* integer, default value: 0,
+* float: default value: 0.0
+* json, default value: {} (empty json object)
 
 ## Indexes
-Within the model, you add indexes with the property "indexes". Like in the sample above, this property is an array with the properties included in each index.
+Within the model, you add indexes with the property "indexes". Like in the sample above, this property is an array with the properties (fields) included in each index.
 
 ## Creating RedEntities instance
 To create an instance of RedEntities, just
-```
-$ const RedEntities = require("redentities")(RedEntitiesConfig);
-```
-
-, where RedEntitiesConfig is a json object with database access credential and location:
-
-```
-{
+```javascript
+const RedEntitiesConfig = {
     "provider": "mysql", 
     "host" : "0.0.0.0",
     "database" : "redentitiestest",
     "user" : "myuser", 
     "password" : "myuserpassword"
-}
+};
+
+const RedEntities = require("redentities")(RedEntitiesConfig);
 ```
-Currently, only 'mysql' provider is supported.</br>
-After doing this, get the RedEntities object just with:
-```
+
+, where RedEntitiesConfig is a json object with database access credential and location. Properties of RedEntitiesConfig is selfdescribed.
+
+Currently, only **mysql** provider is supported. In future updates of Red Entities, other providers will be included.
+
+Once you get RedEntities instance, get the RedEntities object just with:
+```javascript
 const db = RedEntities.Entities(jsonSchema);
 ```
-After doing this, you are ready to get, put and update data within your database.
 
-## Build insert queries
-Considering this schema:
-```
+After doing this, you are ready to retrieve, put, delete and update data within your database without any sql query sintax.
+
+## Schema for the samples
+Consider this schema for the following documentation:
+```javascript
 {
     "entities": [
         {   
@@ -98,20 +101,56 @@ Considering this schema:
         }
 }
 ```
-Inserting a new row is fast with RedEntities:
+
+## Entities in db instance
+For fast write query sentences, RedEntities instances a property for each entity defined in the json schema.
+
+Following the sample, when you instance an schema with:
+```javascript
+const db = RedEntities.Entities(jsonSchema);
 ```
+, db object has a property with the name of the entities defined in the schema (db.users, ie.).
+
+## Selectors
+RedEntities supports four selectors. They are available for each entity instance:
+* db.users.S() : run this for select queries
+* db.users.I() : run this for insert queries.
+* db.users.D() : run this for delete queries:
+* db.users.U() : run this for update queries.
+
+## Basic samples
+Here there are some basic samples of usage of the API using above model schema.
+
+### Build insert queries
+Inserting a new row is fast with RedEntities:
+```javascript
 let values = { Name: "testuser", Alias: "testalias" };
 
-await db.users.I().V( values ).R();
+const id = await db.users.I().V( values ).R();
 ```
-The id of the row is returned.
+The id of the row is returned. The ids of rows in RedEntities are generated automatically. They are based on an 9 unique characters (shortid library is used).
+
 See tests for more examples.
 
-## Build select queries
+### Build select queries
+```javascript
+let entity = await db.users.S().SingleById( <id> );
+```
+### Build update queries
+```javascript
+await db.users.U()
+              .W("ID = ?", user.ID)
+              .V( ["Alias"], [newAlias] ).R();
+```
+### Build delete queries
+```javascript
+await db.Delete("users").DeleteById( <id> );
+```
 
-## Build update queries
-
-## Build delete queries
-
-## Any funtionality missing?
+### Any funtionality missing?
 Please consider to open an issue to improve this project. Glad to hear any suggestion.
+
+## More info
+Working in describing with detail the full API for RedEntities. In the meantime, refer to the tests in /test folder for full working samples.
+
+Remember: testing is a way to document code ;-)
