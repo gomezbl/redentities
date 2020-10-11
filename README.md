@@ -14,7 +14,7 @@ $ mocha
 
 If don't have mocha installed, use:
 "$ npm install -g mocha" )
-## Instroduction
+## Introduction
 Red Entities is a simple ORM and sql builder for building fast model schemas and accesing data with fast and minimal code.
 
 It has been design with optimization and extensibility in mind. Future versions will improve and add more database providers.
