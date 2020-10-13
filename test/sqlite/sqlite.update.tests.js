@@ -18,6 +18,7 @@ async function insertSampleUserEntity() {
 }
 
 describe( 'Redentities update tests', () => {
+    /*
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
@@ -43,4 +44,5 @@ describe( 'Redentities update tests', () => {
 
         await db.datetimetype.U().W("ID=?",entityId).V( ["Value"], [newDateTime]).R();
     });
+    */
 });

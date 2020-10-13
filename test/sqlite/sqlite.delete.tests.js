@@ -17,6 +17,7 @@ async function insertSampleUserEntity() {
 }
 
 describe( 'Redentities delete tests', () => {
+    /*
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
@@ -31,4 +32,5 @@ describe( 'Redentities delete tests', () => {
         let user = await insertSampleUserEntity();
         await db.Delete("users").Where( "Name = ?", user.Name ).Run();
     });
+    */
 });

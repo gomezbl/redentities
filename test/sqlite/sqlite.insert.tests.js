@@ -8,6 +8,7 @@ const RedEntities = require("../../lib/redentities")(RedEntitiesConfig);
 const db = RedEntities.Entities(testSchema);
 
 describe( 'Redentities insert tests', () => {
+    /*
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
@@ -138,4 +139,5 @@ describe( 'Redentities insert tests', () => {
         let entity = await db.longtexttype.S().SingleById(entityId);
         assert.equal( entity.t, text );
     });
+    */
 });

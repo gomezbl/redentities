@@ -17,6 +17,7 @@ describe( 'Redentities tests', () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
     });
 
+    
     it( '# Check if no existing schema exists', async () => {
         let schema = {
             entities: [
@@ -34,6 +35,7 @@ describe( 'Redentities tests', () => {
         assert.isFalse( exists );
     });
 
+    /*
     it( '# Check existing schema', async () => {
         let testSchema = {
             entities: [
@@ -112,4 +114,5 @@ describe( 'Redentities tests', () => {
         assert.equal( definition.name, "title" );
         assert.equal( definition.type, "string" );
     });
+    */
 });

@@ -30,6 +30,7 @@ async function insertSampleUserEntities( count ) {
 }
 
 describe( 'Redentities select tests', () => {
+    /*
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
@@ -271,4 +272,5 @@ describe( 'Redentities select tests', () => {
         assert.equal(entity.ID, entity2.ID);
         assert.equal(entity.f.value, entity2.f.value);
     });
+    */
 });
