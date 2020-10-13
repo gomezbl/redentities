@@ -1,4 +1,4 @@
 {
     "provider": "sqlite", 
-    "database" : "redentitiestest"
+    "databasepath" : "/home/rgb/redentitiestest.db"
 }
