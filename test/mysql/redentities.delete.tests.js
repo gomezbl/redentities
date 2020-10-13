@@ -3,7 +3,7 @@ const ShortId = require("shortid");
 const RedEntitiesConfig = require("./config/RedEntitiesTestConfig.json");
 const testSchema = require("./config/TestSchema.json");
 
-const RedEntities = require("../lib/redentities")(RedEntitiesConfig);
+const RedEntities = require("../../lib/redentities")(RedEntitiesConfig);
 const db = RedEntities.Entities(testSchema);
 
 async function insertSampleUserEntity() {

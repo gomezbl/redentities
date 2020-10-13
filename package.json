@@ -4,7 +4,7 @@
   "description": "Simple & fast ORM and query builder",
   "main": "lib/redentities.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/mysql"
   },
   "author": "",
   "license": "ISC",
