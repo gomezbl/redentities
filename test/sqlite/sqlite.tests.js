@@ -7,9 +7,10 @@ const testSchema = require("./config/TestSchema.json");
 const RedEntities = require("../../lib/redentities")(RedEntitiesConfig);
 const db = RedEntities.Entities(testSchema);
 
-function EntityShortId() {
+function EntityShortId(prefix) {
+    let px = prefix ? prefix : "";
     ShortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ');
-    return ShortId.generate();
+    return `${px}${ShortId.generate()}`;
 }
 
 describe( 'Redentities tests', () => {
@@ -35,12 +36,11 @@ describe( 'Redentities tests', () => {
         assert.isFalse( exists );
     });
 
-    /*
     it( '# Check existing schema', async () => {
         let testSchema = {
             entities: [
                 {
-                    name: EntityShortId(),
+                    name: EntityShortId("table"),
                     fields: [
                         { name: "title", type: "string" }
                     ]
@@ -49,12 +49,14 @@ describe( 'Redentities tests', () => {
         }
 
         let db = RedEntities.Entities( testSchema );
+      
         await db.CreateSchema();
+        
         let exists = await db.ExistsSchema();
 
         assert.isTrue( exists );
     });
-
+    /*    
     it( '# Create schema with one entity', async () => {
         let testSchema = {
             entities: [
@@ -71,6 +73,7 @@ describe( 'Redentities tests', () => {
         await RedEntities.Entities( testSchema ).CreateSchema();
     });
 
+    /*
     it( '# Create schema with multiple entities', async () => {
         let testSchema = {
             entities: [
