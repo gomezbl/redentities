@@ -12,13 +12,13 @@ function TableEntityShortId() {
     return `table${ShortId.generate()}`;
 }
 
-describe( 'Sqlite Redentities tests', () => {
+describe( 'Sqlserver Redentities tests', () => {
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
     });
 
     
-    it( '# Sqlite Sqlite Check if no existing schema exists', async () => {
+    it( '# Sqlserver Sqlserver Check if no existing schema exists', async () => {
         let schema = {
             entities: [
                 {   name: TableEntityShortId(),
@@ -35,7 +35,7 @@ describe( 'Sqlite Redentities tests', () => {
         assert.isFalse( exists );
     });
 
-    it( '# Sqlite Sqlite Check existing schema', async () => {
+    it( '# Sqlserver Sqlserver Check existing schema', async () => {
         let testSchema = {
             entities: [
                 {
@@ -56,7 +56,7 @@ describe( 'Sqlite Redentities tests', () => {
         assert.isTrue( exists );
     });
 
-    it( '# Sqlite Sqlite Create schema with one entity', async () => {
+    it( '# Sqlserver Sqlserver Create schema with one entity', async () => {
         let testSchema = {
             entities: [
                 {
@@ -73,7 +73,7 @@ describe( 'Sqlite Redentities tests', () => {
     });
 
     
-    it( '# Sqlite Create schema with multiple entities', async () => {
+    it( '# Sqlserver Create schema with multiple entities', async () => {
         let testSchema = {
             entities: [
                 {
@@ -97,7 +97,7 @@ describe( 'Sqlite Redentities tests', () => {
     });
 
     
-    it( '# Sqlite GetFieldDefinitionInSchema test', () => {
+    it( '# Sqlserver GetFieldDefinitionInSchema test', () => {
         let testSchema = {
             entities: [
                 {
