@@ -7,10 +7,9 @@ const testSchema = require("./config/TestSchema.json");
 const RedEntities = require("../../lib/redentities")(RedEntitiesConfig);
 const db = RedEntities.Entities(testSchema);
 
-function EntityShortId(prefix) {
-    let px = prefix ? prefix : "";
+function TableEntityShortId() {
     ShortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZñÑ');
-    return `${px}${ShortId.generate()}`;
+    return `table${ShortId.generate()}`;
 }
 
 describe( 'Redentities tests', () => {
@@ -22,7 +21,7 @@ describe( 'Redentities tests', () => {
     it( '# Check if no existing schema exists', async () => {
         let schema = {
             entities: [
-                {   name: EntityShortId(),
+                {   name: TableEntityShortId(),
                     fields: [
                         { name: "Name", type: "string" },
                         { name: "Age", type : "integer" }
@@ -40,7 +39,7 @@ describe( 'Redentities tests', () => {
         let testSchema = {
             entities: [
                 {
-                    name: EntityShortId("table"),
+                    name: TableEntityShortId("table"),
                     fields: [
                         { name: "title", type: "string" }
                     ]
@@ -56,12 +55,12 @@ describe( 'Redentities tests', () => {
 
         assert.isTrue( exists );
     });
-    /*    
+
     it( '# Create schema with one entity', async () => {
         let testSchema = {
             entities: [
                 {
-                    name: EntityShortId(),
+                    name: TableEntityShortId(),
                     fields: [
                         { name: "title", type: "string" },
                         { name: "alias", type: "string" }
@@ -73,19 +72,19 @@ describe( 'Redentities tests', () => {
         await RedEntities.Entities( testSchema ).CreateSchema();
     });
 
-    /*
+    
     it( '# Create schema with multiple entities', async () => {
         let testSchema = {
             entities: [
                 {
-                    name: EntityShortId(),
+                    name: TableEntityShortId(),
                     fields: [
                         { name: "title", type: "string" },
                         { name: "alias", type: "string" }
                     ]
                 },
                 {
-                    name: EntityShortId(),
+                    name: TableEntityShortId(),
                     fields: [
                         { name: "user", type: "string" },
                         { name: "password", type: "string" }
@@ -97,6 +96,7 @@ describe( 'Redentities tests', () => {
         await RedEntities.Entities( testSchema ).CreateSchema();
     });
 
+    
     it( '# GetFieldDefinitionInSchema test', () => {
         let testSchema = {
             entities: [
@@ -117,5 +117,4 @@ describe( 'Redentities tests', () => {
         assert.equal( definition.name, "title" );
         assert.equal( definition.type, "string" );
     });
-    */
 });
