@@ -12,12 +12,12 @@ function EntityShortId() {
     return ShortId.generate();
 }
 
-describe( 'Redentities tests', () => {
+describe( 'Mysql Redentities tests', () => {
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
     });
 
-    it( '# Check if no existing schema exists', async () => {
+    it( '# Mysql Check if no existing schema exists', async () => {
         let schema = {
             entities: [
                 {   name: EntityShortId(),
@@ -34,7 +34,7 @@ describe( 'Redentities tests', () => {
         assert.isFalse( exists );
     });
 
-    it( '# Check existing schema', async () => {
+    it( '# Mysql Check existing schema', async () => {
         let testSchema = {
             entities: [
                 {
@@ -53,7 +53,7 @@ describe( 'Redentities tests', () => {
         assert.isTrue( exists );
     });
 
-    it( '# Create schema with one entity', async () => {
+    it( '# Mysql Create schema with one entity', async () => {
         let testSchema = {
             entities: [
                 {
@@ -69,7 +69,7 @@ describe( 'Redentities tests', () => {
         await RedEntities.Entities( testSchema ).CreateSchema();
     });
 
-    it( '# Create schema with multiple entities', async () => {
+    it( '# Mysql Create schema with multiple entities', async () => {
         let testSchema = {
             entities: [
                 {
@@ -92,7 +92,7 @@ describe( 'Redentities tests', () => {
         await RedEntities.Entities( testSchema ).CreateSchema();
     });
 
-    it( '# GetFieldDefinitionInSchema test', () => {
+    it( '# Mysql GetFieldDefinitionInSchema test', () => {
         let testSchema = {
             entities: [
                 {

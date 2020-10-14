@@ -17,13 +17,13 @@ async function insertSampleUserEntity() {
     return entity;
 }
 
-describe( 'Redentities update tests', () => {
+describe( 'Mysql Redentities update tests', () => {
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
     });
 
-    it( '# Update simple entity', async () => {
+    it( '# Mysql Update simple entity', async () => {
         let newAlias = ShortId.generate();
         let user = await insertSampleUserEntity();
         await db.users.U().W("ID = ?", user.ID).V( ["Alias"], [newAlias] ).R();
@@ -32,7 +32,7 @@ describe( 'Redentities update tests', () => {
         assert.equal( newAlias, entity.Alias );
     });
 
-    it( '# Update date time entity', async() => {
+    it( '# Mysql Update date time entity', async() => {
         let now = new Date(new Date().toUTCString())
 
         let entityId = await db.datetimetype.I().V( { Value: now } ).R();

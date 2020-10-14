@@ -16,21 +16,19 @@ async function insertSampleUserEntity() {
     return entity;
 }
 
-describe( 'Redentities delete tests', () => {
-    /*
+describe( 'Sqlite Redentities delete tests', () => {
     before( async () => {
         await db.RemoveAndCreateDatabase( RedEntitiesConfig.database );
         await RedEntities.Entities( testSchema ).CreateSchema();            
     });
 
-    it( '# Delete simple entity by ID', async () => {
+    it( '# Sqlite Delete simple entity by ID', async () => {
         let user = await insertSampleUserEntity();
         await db.Delete("users").DeleteById( user.ID );
     });
 
-    it( '# Delete simple entity by field', async () => {
+    it( '# Sqlite Delete simple entity by field', async () => {
         let user = await insertSampleUserEntity();
         await db.Delete("users").Where( "Name = ?", user.Name ).Run();
     });
-    */
 });
