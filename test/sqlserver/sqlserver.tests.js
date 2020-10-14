@@ -117,4 +117,56 @@ describe( 'Sqlserver Redentities tests', () => {
         assert.equal( definition.name, "title" );
         assert.equal( definition.type, "string" );
     });
+
+    it( '# Sqlserver RenameSchemaEntities test', async () => {
+        let testSchema = {
+            entities: [
+                {
+                    name: "book",
+                    fields: [
+                        { name: "title", type: "string" },
+                        { name: "alias", type: "string" }
+                    ]
+                }
+            ]
+        }
+
+        let re = await RedEntities.Entities(testSchema);
+        await re.CreateSchema();
+
+        await re.RenameSchemaEntities( "t" );
+
+        let exists = await re.ExistsTable( "bookt" );
+
+        assert.isTrue(exists);
+    });
+
+    it( '# Sqlite check entities populated', async () => {
+        let testSchema = {
+            entities: [
+                {
+                    name: "book",
+                    fields: [
+                        { name: "title", type: "string" },
+                        { name: "alias", type: "string" }
+                    ]
+                }
+            ]
+        }
+
+        let re = await RedEntities.Entities(testSchema);
+        
+        await re.CreateSchema();
+
+        assert.isTrue( typeof re.book.I == 'function' );
+        assert.isTrue( typeof re.book.S == 'function' );
+        assert.isTrue( typeof re.book.D == 'function' );
+        assert.isTrue( typeof re.book.U == 'function' );
+    });
+
+    it( '# Sqlite NewId test', () => {
+        let newId = db.NewId();
+
+        assert.isString( newId );
+    });
 });
