@@ -1,28 +1,24 @@
-Red Entities
-============
+# Red Entities
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/jprichardson/node-fs-extra/blob/master/LICENSE)
 
 What it is?
------------
 
 Red Entities is a simple but flexible and fast ORM and sql query builder.
 
 Red Entities is focused on minimal typing when accesing data and the definition of database models using schemas (simple json objects).
 
-Engines supported
------------------
+## Engines supported
+
 Tested with Mysql 5.x, 8x, Aurora and AWS RDS databases based on Mysql. Node.js 10.x, 12.x, 13.x, 14.x
 
 
 ## Install
----
 
     $ npm install redentities --save
 
 ## Test
----
 
 Change database configuration in files
 * /test/mysql/config/RedEntitiesTestConfig.json
@@ -35,7 +31,6 @@ Just run:
     $ mocha
 
 ## Basic sample
----
 
 Consider this self-explained schema: 
 ```js
@@ -52,7 +47,6 @@ const sampleSchema = {
         }
 }
 ```
-
 
 Load this schema in an Red Entities object to be used in an Mysql database:
 
@@ -87,7 +81,6 @@ let userEntity = await db.users.S().SingleById(userId);
 ```
 
 ## Introduction
----
 
 Red Entities is a simple ORM and sql builder for building fast model schemas and accesing data with fast and minimal code.
 
@@ -96,7 +89,6 @@ It has been design with optimization and extensibility in mind. Future versions 
 Current version supports MySql (and all its flavours) and Sqlite 3, but currently is fully tested only with MySql 5.x, 8.x, Aurora and AWS RDS Mysql based databases.
 
 ## Design intention
----
 
 The intention design behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding any complex sql syntax typing.
 
@@ -123,16 +115,14 @@ This project is part of Mantra Framework, which uses fully Red Entities as its O
 - [Dynamic schemas](docs/dynamicschemas.md)
 - [Iterating over values](docs/iterating.md)
 
-Credit
-------
+## Credits
 
 `Red Entities` has been fully written by:
 
 - [Rafael Gómez Blanes](https://github.com/gomezbl)
 
 
-License
--------
+## License
 
 Licensed under MIT
 
