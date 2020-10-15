@@ -9,10 +9,21 @@ Red Entities is a simple but flexible and fast ORM and sql query builder.
 
 Red Entities is focused on minimal typing when accesing data and the definition of database models using schemas (simple json objects).
 
-## Engines supported
+## Database engines supported
 
-Tested with Mysql 5.x, 8x, Aurora and AWS RDS databases based on Mysql. Node.js 10.x, 12.x, 13.x, 14.x
-
+Tested with:
+* Mysql 5.x
+* Mysql 8.x
+* Amazon Aurora
+* AWS RDS databases based on Mysql
+* Sqlite3
+* (future integration of Posgresql, MariaDB and Sql Server)
+  
+Besises, has been fully tested with:
+* Node.js 10.x
+* Node.js 12.x
+* Node.js 13.x
+* Node.js 14.x
 
 ## Install
 
@@ -26,7 +37,7 @@ Change database configuration in files
 
 Testing will create many databases and tables.
 
-Just run: 
+Then, just run (mocha required installed): 
 
     $ npm test
 
