@@ -19,7 +19,7 @@ Tested with:
 * Sqlite3
 * (future integration of Posgresql, MariaDB and Sql Server)
   
-Besises, has been fully tested with:
+Thus, has been fully tested with:
 * Node.js 10.x
 * Node.js 12.x
 * Node.js 13.x
