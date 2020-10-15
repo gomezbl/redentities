@@ -56,6 +56,7 @@ const sampleSchema = {
             ],
             "indexes": [ ["mail"], ["created"] ]
         }
+    ]
 }
 ```
 
