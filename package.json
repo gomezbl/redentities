@@ -1,7 +1,7 @@
 {
   "name": "redentities",
   "version": "1.2.0",
-  "description": "Simple & fast ORM and query builder, MySql, Sqlite supported",
+  "description": "Simple & fast ORM and query builder, MySql, Sqlite and Sql Server supported",
   "main": "lib/redentities.js",
   "scripts": {
     "test": "mocha test/sqlite && mocha test/mysql && mocha test/sqlserver"
