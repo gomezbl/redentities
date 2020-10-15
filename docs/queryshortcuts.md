@@ -1,0 +1,1 @@
+# Red Entities query shortcuts

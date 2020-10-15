@@ -1,156 +1,139 @@
-# Red Entities - simple ORM and query builder to build fast queries
+Red Entities
+============
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![License](https://img.shields.io/npm/l/express.svg)](https://github.com/jprichardson/node-fs-extra/blob/master/LICENSE)
+
+What it is?
+-----------
+
+Red Entities is a simple but flexible and fast ORM and sql query builder.
+
+Red Entities is focused on minimal typing when accesing data and the definition of database models using schemas (simple json objects).
+
+Engines supported
+-----------------
+Tested with Mysql 5.x, 8x, Aurora and AWS RDS databases based on Mysql. Node.js 10.x, 12.x, 13.x, 14.x
+
 
 ## Install
-$ npm install redentities --save
+---
+
+    $ npm install redentities --save
 
 ## Test
-Change database configuration credentials in file /test/config/RedEntitiesTestConfig.json
+---
+
+Change database configuration in files
+* /test/mysql/config/RedEntitiesTestConfig.json
+* /test/sqlite/config/RedEntitiesTestConfig.json
 
 Testing will create many databases and tables.
 
 Just run: 
 
-$ mocha
+    $ mocha
 
-If don't have mocha installed, use:
-"$ npm install -g mocha" )
-## Introduction
-Red Entities is a simple ORM and sql builder for building fast model schemas and accesing data with fast and minimal code.
+## Basic sample
+---
 
-It has been design with optimization and extensibility in mind. Future versions will improve and add more database providers.
-
-Current version only supports MySql (and all its flavours), but currently is fully tested only with MySql 5.7. Future updates and updates will integrate (and test) MySql 8.x, MariaDB, Postgresql, SqlLite, Sql Server, etc.
-
-The intention design behind RedEntities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding any sql syntax typing.
-
-Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly.
-
-That's the reason that RedEntities doesn't support joins...
-
-This project is part of Mantra Framework, which uses fully RedEntities as its ORM layer to build its components.
-
-RedEntities is fast, simple and efficient.
-
-## Defining a model
-A model (data schema), is defined easily with a json object. In this key / value json object, you define the name of the property, its type and its default value. Like this:
-
-```javascript
-{
+Consider this self-explained schema: 
+```js
+const sampleSchema = {
     "entities" : [
         {
             "name" : "users",
             "fields": [
                 { "name" : "mail", "type" : "string" },
                 { "name" : "password", "type" : "string" },
-                { "name" : "activated", "type" : "boolean", "default": false },
                 { "name" : "created", "type" : "datetime"}
             ],
             "indexes": [ ["mail"], ["activated","created"] ]
-        },
-}
-```
-Note: consider this schema for the following documentation. </br>
-
-The are the types supported:
-* string, default value: string empty.
-* datetime, default value: current datetime in UTC.
-* boolean, default value: false.
-* integer, default value: 0,
-* float: default value: 0.0
-* json, default value: {} (empty json object)
-
-## Indexes
-Within the model, you add indexes with the property "indexes". Like in the sample above, this property is an array with the properties (fields) included in each index.
-
-## Creating RedEntities instance
-To create an instance of RedEntities, just
-```javascript
-const RedEntitiesConfig = {
-    "provider": "mysql", 
-    "host" : "0.0.0.0",
-    "database" : "redentitiestest",
-    "user" : "myuser", 
-    "password" : "myuserpassword"
-};
-
-const RedEntities = require("redentities")(RedEntitiesConfig);
-```
-
-, where RedEntitiesConfig is a json object with database access credential and location. Properties of RedEntitiesConfig is selfdescribed.
-
-Currently, only **mysql** provider is supported. In future updates of Red Entities, other providers will be included.
-
-Once you get RedEntities instance, get the RedEntities object just with:
-```javascript
-const db = RedEntities.Entities(jsonSchema);
-```
-
-After doing this, you are ready to retrieve, put, delete and update data within your database without any sql query sintax.
-
-## Schema for the samples
-Consider this schema for the following documentation:
-```javascript
-{
-    "entities": [
-        {   
-            "name": "users",
-            "fields": [
-                { "name": "Name", "type": "string" },
-                { "name": "Alias", "type": "string" }
-            ] 
         }
 }
 ```
 
-## Entities in db instance
-For fast write query sentences, RedEntities instances a property for each entity defined in the json schema.
 
-Following the sample, when you instance an schema with:
-```javascript
-const db = RedEntities.Entities(jsonSchema);
-```
-, db object has a property with the name of the entities defined in the schema (db.users, ie.).
+Load this schema in an Red Entities object to be used in an Mysql database:
 
-## Selectors
-RedEntities supports four selectors. They are available for each entity instance:
-* db.users.S() : run this for select queries
-* db.users.I() : run this for insert queries.
-* db.users.D() : run this for delete queries:
-* db.users.U() : run this for update queries.
-
-## Basic samples
-Here there are some basic samples of usage of the API using above model schema.
-
-### Build insert queries
-Inserting a new row is fast with RedEntities:
-```javascript
-let values = { Name: "testuser", Alias: "testalias" };
-
-const id = await db.users.I().V( values ).R();
-```
-The id of the row is returned. The ids of rows in RedEntities are generated automatically. They are based on an 9 unique characters (shortid library is used).
-
-See tests for more examples.
-
-### Build select queries
-```javascript
-let entity = await db.users.S().SingleById( <id> );
-```
-### Build update queries
-```javascript
-await db.users.U()
-              .W("ID = ?", user.ID)
-              .V( ["Alias"], [newAlias] ).R();
-```
-### Build delete queries
-```javascript
-await db.Delete("users").DeleteById( <id> );
+```js
+const RedEntities = require("redentities")({
+    provider: "mysql",
+    host: "localhost",
+    user: "myuser",
+    password: "mypassword"
+});
 ```
 
-### Any funtionality missing?
-Please consider to open an issue to improve this project. Glad to hear any suggestion.
+Create once schema in database with:
+```js
+await RedEntities.Entities(sampleSchema).CreateSchema();
+```
 
-## More info
-Working in describing with detail the full API for RedEntities. In the meantime, refer to the tests in /test folder for full working samples.
+From now on, you can use Red Entities powers with fast sentences like this:
 
-Remember: testing is a way to document code ;-)
+```js
+const db = await RedEntities.Entities(sampleSchema);
+
+const newUserId = await db.users.I().V( { 
+    mail: "re@redentities.com",
+    password: "12345" ).R();
+```
+
+Retrieve an entity with simple sentences like:
+
+```js
+let userEntity = await db.users.S().SingleById(userId);
+```
+
+## Introduction
+---
+
+Red Entities is a simple ORM and sql builder for building fast model schemas and accesing data with fast and minimal code.
+
+It has been design with optimization and extensibility in mind. Future versions will improve and add more database providers.
+
+Current version supports MySql (and all its flavours) and Sqlite 3, but currently is fully tested only with MySql 5.x, 8.x, Aurora and AWS RDS Mysql based databases.
+
+## Design intention
+---
+
+The intention design behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding any complex sql syntax typing.
+
+Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly. Just use repositories as... a way to store an retrieve data.
+
+That's the reason that Red Entities doesn't support joins... (currently).
+
+Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis, but production data should be placed in a simple storage: fast to insert and fast to retrieve.
+
+This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
+
+## Documentation
+---
+- [Defining schemas](docs/schemas.md)
+- [Types supported](docs/types.md)
+- [Creating schemas](docs/schemascreation.md)
+- [Indexes](docs/indexes.md)
+- [Rows ids](docs/ids.md)
+- [Query shortcuts](docs/queryshortcuts.md)
+- [Insert values](docs/insert.md)
+- [Select values](docs/select.md)
+- [Update values](docs/update.md)
+- [Delete values](docs/delete.md)
+- [Dynamic schemas](docs/dynamicschemas.md)
+- [Iterating over values](docs/iterating.md)
+
+Credit
+------
+
+`Red Entities` has been fully written by:
+
+- [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+
+License
+-------
+
+Licensed under MIT
+
+Copyright (c) 2011-2017 [Rafael Gómez Blanes](https://github.com/gomezbl)
