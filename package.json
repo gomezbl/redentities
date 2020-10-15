@@ -4,14 +4,13 @@
   "description": "Simple & fast ORM and query builder, MySql, Sqlite AWS RDS mysql based databases supported",
   "main": "lib/redentities.js",
   "scripts": {
-    "test": "mocha test/sqlite && mocha test/mysql && mocha test/sqlserver"
+    "test": "mocha test/sqlite && mocha test/mysql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.1",
     "moment": "^2.29.1",
-    "mssql": "^6.2.3",
     "mysql": "^2.18.1",
     "shortid": "^2.2.15",
     "sqlite3": "^5.0.0",
