@@ -37,7 +37,7 @@ Change database configuration in files
 
 Testing will create many databases and tables.
 
-Then, just run (mocha required installed): 
+Then, just run (mocha required): 
 
     $ npm test
 
