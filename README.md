@@ -28,7 +28,7 @@ Testing will create many databases and tables.
 
 Just run: 
 
-    $ mocha
+    $ npm test
 
 ## Basic sample
 
@@ -43,12 +43,12 @@ const sampleSchema = {
                 { "name" : "password", "type" : "string" },
                 { "name" : "created", "type" : "datetime"}
             ],
-            "indexes": [ ["mail"], ["activated","created"] ]
+            "indexes": [ ["mail"], ["created"] ]
         }
 }
 ```
 
-Load this schema in an Red Entities object to be used in an Mysql database:
+Load this schema in an Red Entities object to be used in a Mysql database:
 
 ```js
 const RedEntities = require("redentities")({
@@ -90,18 +90,17 @@ Current version supports MySql (and all its flavours) and Sqlite 3, but currentl
 
 ## Design intention
 
-The intention design behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding any complex sql syntax typing.
+The intention design behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding complex sql syntax typing in production code.
 
-Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly. Just use repositories as... a way to store an retrieve data.
+Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly. Just use repositories as... a way to store, modify an retrieve data.
 
 That's the reason that Red Entities doesn't support joins... (currently).
 
-Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis, but production data should be placed in a simple storage: fast to insert and fast to retrieve.
+Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis, but production data should be placed in a simple storage as posible: fast to insert and fast to retrieve.
 
 This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
 
 ## Documentation
----
 - [Defining schemas](docs/schemas.md)
 - [Types supported](docs/types.md)
 - [Creating schemas](docs/schemascreation.md)
