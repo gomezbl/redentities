@@ -46,15 +46,15 @@ Then, just run (mocha required):
 Consider this self-explained schema: 
 ```js
 const sampleSchema = {
-    "entities" : [
+    entities: [
         {
-            "name" : "users",
-            "fields": [
-                { "name" : "mail", "type" : "string" },
-                { "name" : "password", "type" : "string" },
-                { "name" : "created", "type" : "datetime"}
+            name : "users",
+            fields: [
+                { name : "mail", type : "string" },
+                { name : "password", type : "string" },
+                { name : "created", type : "datetime"}
             ],
-            "indexes": [ ["mail"], ["created"] ]
+            indexes: [ [mail], [created] ]
         }
     ]
 }
@@ -102,13 +102,17 @@ Current version supports MySql (and all its flavours) and Sqlite 3, but currentl
 
 ## Design intention
 
-The intention design behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding complex sql syntax typing in production code.
+The design intention behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding complex sql syntax typing in production code. This is one the principles to follow for radical componetization of large applications that will evolve and will be change continuosly.
 
 Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly. Just use repositories as... a way to store, modify an retrieve data.
 
+Each component in the system should use and manage its own simple data repositories (just a few tables).
+
 That's the reason that Red Entities doesn't support joins... (currently).
 
-Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis, but production data should be placed in a simple storage as posible: fast to insert and fast to retrieve.
+Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis in a different repository, but production data should be placed in a simple storage as posible: fast to insert and fast to retrieve.
+
+The way you explote your data, determines the way it should be stored.
 
 This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
 
