@@ -48,7 +48,7 @@ const sampleSchema = {
                 { name : "password", type : "string" },
                 { name : "created", type : "datetime"}
             ],
-            indexes: [ [mail], [created] ]
+            indexes: [ ["mail"], ["created"] ]
         }
     ]
 }
