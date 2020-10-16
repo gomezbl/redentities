@@ -1,5 +1,7 @@
 # Red Entities schemas
 
+(Remember: best documentation in software should be found at... tests)
+
 A schema is a json object describing the data you need to persist.
 
 One json schema object can contain different entities.
@@ -8,7 +10,7 @@ Each entity consists of a number of properties (fields with their types).
 
 Red Entities maps the schema to sql table dialects, depending on the provider (Mysql, Sqlite, etc.).
 
-For each Red Entities, you should provide one schema because the process of create the instance of the schema is high.
+In the scope of your application, create your Red Entities instances with your schemas once, because the process of mapping and creation of shortcut functions is heavy load.
 
 ## Defining a schema
 
