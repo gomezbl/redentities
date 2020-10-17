@@ -117,7 +117,7 @@ The way you explote your data, determines the way it should be stored.
 This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
 
 ## Documentation
-- [Providers config](docs/providers.md
+- [Providers config](docs/providers.md)
 - [Defining schemas](docs/schemas.md)
 - [Types supported](docs/types.md)
 - [Creating schemas](docs/schemascreation.md)
