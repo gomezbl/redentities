@@ -118,7 +118,7 @@ This project is part of Mantra Framework, which uses fully Red Entities as its O
 
 ## Documentation
 - [Providers config](docs/providers.md)
-- [Sample schema](docs/sampleschema.md))
+- [Sample schema](docs/sampleschema.md)
 - [Defining schemas](docs/schemas.md)
 - [Types supported](docs/types.md)
 - [Creating schemas](docs/schemascreation.md)

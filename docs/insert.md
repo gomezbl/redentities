@@ -9,7 +9,7 @@ const entityId = await db.users.I().V( { mail: "rd@redentities.com", password: "
 ```
 
 ## Documentation
-- [Providers config](docs/providers.md)
+- [Providers config](/docs/providers.md)
 - [Sample schema](docs/sampleschema.md))
 - [Defining schemas](docs/schemas.md)
 - [Types supported](docs/types.md)
