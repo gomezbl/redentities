@@ -3,6 +3,12 @@
 Updating entities is done using U() selector and indicating the new values in V() selector.
 
 ```js
+await db.U().W("ID=?", userId).V( { mail: "newmail@redentities.com" } ).R();
+```
+
+V() syntax allows to indicate values to update using arrays with field names and its fields values:
+
+```js
 await db.U().W("ID=?", userId).V(["mail"], ["newmail@redentities.com"]).R();
 ```
 

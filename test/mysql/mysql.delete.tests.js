@@ -1,3 +1,4 @@
+const { assert } = require("chai");
 const ShortId = require("shortid");
 
 const RedEntitiesConfig = require("./config/RedEntitiesTestConfig.json");
@@ -30,5 +31,12 @@ describe( 'Mysql Redentities delete tests', () => {
     it( '# Mysql Delete simple entity by field', async () => {
         let user = await insertSampleUserEntity();
         await db.Delete("users").Where( "Name = ?", user.Name ).Run();
+    });
+
+    it( '# Mysql Delete get query string', async () => {
+        let user = await insertSampleUserEntity();
+        let sqlQuery = await db.Delete("users").Where( "Name = ?", user.Name ).Q();
+
+        assert.isString( sqlQuery );
     });
 });

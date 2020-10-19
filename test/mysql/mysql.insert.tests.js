@@ -138,4 +138,12 @@ describe( 'Mysql Redentities insert tests', () => {
         let entity = await db.longtexttype.S().SingleById(entityId);
         assert.equal( entity.t, text );
     });
+
+    it( '# Mysql get query string', async () => {
+        let alias = "O'Brian";
+        let values = { Name: ShortId.generate(), Alias: alias };
+        let sqlQuery = await db.users.I().V( values ).Q();
+
+        assert.isString( sqlQuery );
+    });
 });

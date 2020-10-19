@@ -32,6 +32,15 @@ describe( 'Sqlite Redentities update tests', () => {
         assert.equal( newAlias, entity.Alias );
     });
 
+    it( '# Mysql Update simple entity with object', async () => {
+        let newAlias = ShortId.generate();
+        let user = await insertSampleUserEntity();
+        await db.users.U().W("ID = ?", user.ID).V( { Alias: newAlias } ).R();
+        let entity = await db.users.S().SingleById(user.ID);
+
+        assert.equal( newAlias, entity.Alias );
+    });
+
     it( '# Sqlite Update date time entity', async() => {
         let now = new Date(new Date().toUTCString())
 
@@ -42,5 +51,13 @@ describe( 'Sqlite Redentities update tests', () => {
         let newDateTime = new Date(new Date().toUTCString())
 
         await db.datetimetype.U().W("ID=?",entityId).V( ["Value"], [newDateTime]).R();
+    });
+
+    it( '# Sqlite get query string', async () => {
+        let alias = "O'Brian";
+        let values = { Name: ShortId.generate(), Alias: alias };
+        let sqlQuery = await db.users.I().V( values ).Q();
+
+        assert.isString( sqlQuery );
     });
 });

@@ -273,4 +273,10 @@ describe( 'Mysql Redentities select tests', () => {
         assert.equal(entity.ID, entity2.ID);
         assert.equal(entity.f.value, entity2.f.value);
     });
+
+    it( '# Mysql get query string', async () => {
+        let query = await db.users.S().L(0,5).Q();     
+
+        assert.isString( query );
+    });
 });
