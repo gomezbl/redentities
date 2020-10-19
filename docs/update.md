@@ -28,3 +28,4 @@ First parameters or V() is an array with the names of the fields to update; the 
 - [Update values](docs/update.md)
 - [Delete values](docs/delete.md)
 - [Iterating over values](docs/iterating.md)
+- [Updating schema to a new version](docs/updatingschemasversion.md)

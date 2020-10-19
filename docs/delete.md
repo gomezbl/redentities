@@ -24,3 +24,4 @@ D() selectors returns the number of rows removed.
 - [Update values](docs/update.md)
 - [Delete values](docs/delete.md)
 - [Iterating over values](docs/iterating.md)
+- [Updating schema to a new version](docs/updatingschemasversion.md)

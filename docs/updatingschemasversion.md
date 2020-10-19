@@ -1,12 +1,5 @@
-# Red Entities insert sentences
+# Updating schema version
 
-Inserting new values is easy using I() selector:
-
-## Insert simple value
-
-```js
-const entityId = await db.users.I().V( { mail: "rd@redentities.com", password: "12345" }).R();
-```
 
 ## Documentation
 - [Providers config](docs/providers.md)

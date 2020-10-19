@@ -68,3 +68,4 @@ Have a look to [Query shortcuts](docs/queryshortcuts.md) section for more info a
 - [Update values](docs/update.md)
 - [Delete values](docs/delete.md)
 - [Iterating over values](docs/iterating.md)
+- [Updating schema to a new version](docs/updatingschemasversion.md)
