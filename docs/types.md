@@ -27,3 +27,18 @@ The following are the mappings to Sqlite3 database engine:
 * "longtext" -> Sqlite3 type of TEXT
 
 Tip: keeping your data persistance simple improves the design and scalability of your application.
+
+## Documentation
+- [Providers config](docs/providers.md)
+- [Sample schema](docs/sampleschema.md))
+- [Defining schemas](docs/schemas.md)
+- [Types supported](docs/types.md)
+- [Creating schemas](docs/schemascreation.md)
+- [Indexes](docs/indexes.md)
+- [Rows ids](docs/ids.md)
+- [Query shortcuts](docs/queryshortcuts.md)
+- [Insert values](docs/insert.md)
+- [Select values](docs/select.md)
+- [Update values](docs/update.md)
+- [Delete values](docs/delete.md)
+- [Iterating over values](docs/iterating.md)

@@ -1,1 +1,0 @@
-# Red Entities dynamic schemas

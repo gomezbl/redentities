@@ -118,6 +118,7 @@ This project is part of Mantra Framework, which uses fully Red Entities as its O
 
 ## Documentation
 - [Providers config](docs/providers.md)
+- [Sample schema](docs/sampleschema.md))
 - [Defining schemas](docs/schemas.md)
 - [Types supported](docs/types.md)
 - [Creating schemas](docs/schemascreation.md)
@@ -128,7 +129,6 @@ This project is part of Mantra Framework, which uses fully Red Entities as its O
 - [Select values](docs/select.md)
 - [Update values](docs/update.md)
 - [Delete values](docs/delete.md)
-- [Dynamic schemas](docs/dynamicschemas.md)
 - [Iterating over values](docs/iterating.md)
 
 ## Credits

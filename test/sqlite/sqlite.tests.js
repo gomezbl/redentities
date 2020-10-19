@@ -30,7 +30,7 @@ describe( 'Sqlite Redentities tests', () => {
             ]
         }
 
-        let exists = await RedEntities.Entities( schema ).ExistsDatabase();
+        let exists = await RedEntities.Entities( schema ).ExistsSchema();
 
         assert.isFalse( exists );
     });

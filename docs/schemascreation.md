@@ -53,3 +53,18 @@ In db instance, there's a property with the name of the entity (in this case 'us
 Remember: the purpose of Red Entities is to isolate database engines (as it do all ORM) and to provide a way to type sql sentences in a fast and smarter way.
 
 Have a look to [Query shortcuts](docs/queryshortcuts.md) section for more info about this.
+
+## Documentation
+- [Providers config](docs/providers.md)
+- [Sample schema](docs/sampleschema.md))
+- [Defining schemas](docs/schemas.md)
+- [Types supported](docs/types.md)
+- [Creating schemas](docs/schemascreation.md)
+- [Indexes](docs/indexes.md)
+- [Rows ids](docs/ids.md)
+- [Query shortcuts](docs/queryshortcuts.md)
+- [Insert values](docs/insert.md)
+- [Select values](docs/select.md)
+- [Update values](docs/update.md)
+- [Delete values](docs/delete.md)
+- [Iterating over values](docs/iterating.md)
