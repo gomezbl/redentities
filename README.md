@@ -2,6 +2,8 @@
 # Red Entities
 ![RedEntities logo](./docs/logo/redentities-logo-320.png)
 
+<p><small>(<a href='https://www.freepik.es/vectores/marco'>Logo attribution</a>)</small></p>
+
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/jprichardson/node-fs-extra/blob/master/LICENSE)
 
