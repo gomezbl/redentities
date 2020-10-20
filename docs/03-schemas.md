@@ -10,7 +10,7 @@ Red Entities maps the schema to sql table dialects, depending on the provider (M
 
 In the scope of your application, create your Red Entities instances with your schemas *once*, because the process of mapping and creation of shortcut functions is heavy load.
 
-## Defining a schema
+## #03 Defining a schema
 
 You define a schema with this sort of json object:
 

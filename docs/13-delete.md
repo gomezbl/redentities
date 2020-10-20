@@ -1,4 +1,4 @@
-# Red Entities delete sentences
+# #13 Red Entities delete sentences
 
 Deleting entities with Red Entities is fast using D() selector:
 

@@ -1,4 +1,4 @@
-# Red Entities update sentences
+# #12 Red Entities update sentences
 
 Updating entities is done using U() selector and indicating the new values in V() selector.
 

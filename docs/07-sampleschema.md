@@ -1,4 +1,4 @@
-# Sample schema
+# #07 Sample schema
 
 For the following samples, this schema will be used and Red Entities object will be used:
 
