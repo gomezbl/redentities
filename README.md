@@ -9,6 +9,10 @@ Red Entities is a simple but flexible and fast ORM and sql query builder.
 
 Red Entities is focused on minimal typing when accesing data and the definition of database models using schemas (simple json objects).
 
+A model is defined in a json object, called *schema*.
+
+Data access (inserts, selects, removes and updates), are done by *selectors* for a fast an simple writing of the sentences.
+
 ## Database engines supported
 
 Tested with:
@@ -27,13 +31,15 @@ Thus, has been fully tested with:
 
 ## Install
 
-    $ npm install redentities --save
+    $ npm i redentities --save
 
 ## Test
 
-Change database configuration in files
-* /test/mysql/config/RedEntitiesTestConfig.json
-* /test/sqlite/config/RedEntitiesTestConfig.json
+Change database configuration [providers](/docs/providers.md) in file located at:
+
+```
+/test/providersconfig.json
+```
 
 Testing will create many databases and tables.
 
@@ -60,7 +66,7 @@ const sampleSchema = {
 }
 ```
 
-Load this schema in an Red Entities object to be used in a Mysql database:
+Load this schema in an Red Entities object with:
 
 ```js
 const RedEntities = require("redentities")({
@@ -72,6 +78,7 @@ const RedEntities = require("redentities")({
 ```
 
 Create once schema in database with:
+
 ```js
 await RedEntities.Entities(sampleSchema).CreateSchema();
 ```
@@ -92,45 +99,21 @@ Retrieve an entity with simple sentences like:
 let userEntity = await db.users.S().SingleById(userId);
 ```
 
-## Introduction
-
-Red Entities is a simple ORM and sql builder for building fast model schemas and accesing data with fast and minimal code.
-
-It has been design with optimization and extensibility in mind. Future versions will improve and add more database providers.
-
-Current version supports MySql (and all its flavours) and Sqlite 3, but currently is fully tested only with MySql 5.x, 8.x, Aurora and AWS RDS Mysql based databases.
-
-## Design intention
-
-The design intention behind Red Entities is to keep data in data repositories (databases) with minimal design and no relations between entities, avoiding complex sql syntax typing in production code. This is one the principles to follow for radical componetization of large applications that will evolve and will be change continuosly.
-
-Minimal design in data repositories: Yes, is a principle to afford big projects with models which change constantly. Just use repositories as... a way to store, modify an retrieve data.
-
-Each component in the system should use and manage its own simple data repositories (just a few tables).
-
-That's the reason that Red Entities doesn't support joins... (currently).
-
-Is some kind of analytics should be performed over data, then these data should be placed in a way to *allow* data analysis in a different repository, but production data should be placed in a simple storage as posible: fast to insert and fast to retrieve.
-
-The way you explote your data, determines the way it should be stored.
-
-This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
-
 ## Documentation
-- [Providers config](/docs/providers.md)
-- [Sample schema](/docs/sampleschema.md)
-- [Defining schemas](/docs/schemas.md)
-- [Types supported](/docs/types.md)
-- [Creating schemas](/docs/schemascreation.md)
-- [Indexes](/docs/indexes.md)
-- [Rows ids](/docs/ids.md)
-- [Query shortcuts](/docs/queryshortcuts.md)
-- [Insert values](/docs/insert.md)
-- [Select values](/docs/select.md)
-- [Update values](/docs/update.md)
-- [Delete values](/docs/delete.md)
-- [Iterating over values](/docs/iterating.md)
-- [Updating schema to a new version](/docs/updatingschemasversion.md)
+- [#01 Introduction](/docs/01-introduction.md)
+- [#02 Providers config](/docs/02-providers.md)
+- [#03 Defining schemas](/docs/03-schemas.md)
+- [#04 Types supported](/docs/04-types.md)
+- [#05 Indexes](/docs/05-indexes.md)
+- [#06 Rows ids](/docs/06-ids.md)
+- [#07 Sample schema](/docs/07-sampleschema.md)
+- [#08 Creating schemas](/docs/08-schemascreation.md)
+- [#09 Query shortcuts](/docs/09-queryshortcuts.md)
+- [#10 Inserting values](/docs/10-insert.md)
+- [#11 Selecting values](/docs/11-select.md)
+- [#12 Updating values](/docs/12-update.md)
+- [#13 Deleting values](/docs/13-delete.md)
+- [#14 Iterating over values](/docs/14-iterating.md)
 
 ## Credits
 
@@ -138,9 +121,10 @@ This project is part of Mantra Framework, which uses fully Red Entities as its O
 
 - [Rafael Gómez Blanes](https://github.com/gomezbl)
 
+This project is part of the libraries developed for projects like [Hub de Libros](https://www.hubdelibros.com) and others.
 
 ## License
 
 Licensed under MIT
 
-Copyright (c) 2011-2017 [Rafael Gómez Blanes](https://github.com/gomezbl)
+Copyright (c) 2019-2020 [Rafael Gómez Blanes](https://github.com/gomezbl)

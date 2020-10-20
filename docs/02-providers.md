@@ -1,4 +1,4 @@
-# Red Entities schemas
+# #02 Red Entities schemas
 
 (Remember: best documentation in software should be found at... tests)
 
@@ -6,7 +6,7 @@ When creating Red Entities instance, you need to set the provider config (Mysql,
 
 This provider info is a json object with some credentials (if needed) of data that the provider needs.
 
-For Mysql based engines, the json configuration is like this:
+For Mysql based engines, json configuration object is like this:
 
 ```js
 {
@@ -26,7 +26,7 @@ For Sqlite instance, the json configuration is simple:
 }
 ```
 
-Given a configuration json object, you instance Red Entities with:
+Given a configuration json object, you get a new Red Entities instance with:
 
 ```js
 const RedEntities = require("redentities")( config );
@@ -50,18 +50,4 @@ const config {
 }
 ```
 
-## Documentation
-- [Providers config](/docs/providers.md)
-- [Sample schema](/docs/sampleschema.md)
-- [Defining schemas](/docs/schemas.md)
-- [Types supported](/docs/types.md)
-- [Creating schemas](/docs/schemascreation.md)
-- [Indexes](/docs/indexes.md)
-- [Rows ids](/docs/ids.md)
-- [Query shortcuts](/docs/queryshortcuts.md)
-- [Insert values](/docs/insert.md)
-- [Select values](/docs/select.md)
-- [Update values](/docs/update.md)
-- [Delete values](/docs/delete.md)
-- [Iterating over values](/docs/iterating.md)
-- [Updating schema to a new version](/docs/updatingschemasversion.md)
+[Next - #03 Defining schemas](/docs/03-schemas.md)

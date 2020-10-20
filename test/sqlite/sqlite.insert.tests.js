@@ -1,8 +1,8 @@
 const assert = require("chai").assert;
 const ShortId = require("shortid");
 
-const RedEntitiesConfig = require("./config/RedEntitiesTestConfig.json");
-const testSchema = require("./config/TestSchema.json");
+const RedEntitiesConfig = require("../providersconfig.json").sqliteproviderconfig;
+const testSchema = require("../testschema.json");
 
 const RedEntities = require("../../lib/redentities")(RedEntitiesConfig);
 const db = RedEntities.Entities(testSchema);
