@@ -25,3 +25,11 @@ The way you explote your data, determines the way it should be stored.
 This project is part of Mantra Framework, which uses fully Red Entities as its ORM layer to build its components.
 
 [Next - #02 Providers config](/docs/02-providers.md)
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)

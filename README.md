@@ -118,12 +118,31 @@ let userEntity = await db.users.S().SingleById(userId);
 - [#12 Updating values](/docs/12-update.md)
 - [#13 Deleting values](/docs/13-delete.md)
 - [#14 Iterating over values](/docs/14-iterating.md)
+- [#15 Advanced topics](/docs/15-advanced-topics.md)
 
-## Credits
+## Demos
 
-`RedEntities` has been fully written by:
+You can find some demos at /demos folders.
 
-- [Rafael Gómez Blanes](https://github.com/gomezbl)
+To run them, just
+
+```js
+node /demos/<demo name.js>
+```
+
+[01-inserts-sample](/demos/01-inserts-sample.js) : Insert and retrieve basic values
+[02-insert-and-iterate](/demos/02-insert-and-iterate.js) : Insert a bulk of values and iterates over them
+[03-insert-and-deleteall](/demos/02-insert-and-deleteall.js) : Insert a bulk of values and removed them
+  
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)
+
+## About
 
 This project is part of the libraries developed for projects like [Hub de Libros](https://www.hubdelibros.com) and others.
 

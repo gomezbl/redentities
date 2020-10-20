@@ -37,3 +37,11 @@ In db instance, there's a property with the name of the entity (in this case 'us
 Remember: the purpose of Red Entities is to isolate database engines (as it do all ORM) and to provide a way to type sql sentences in a fast and smarter way.
 
 [Next - #09 Query shortcuts](/docs/09-queryshortcuts.md)
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)

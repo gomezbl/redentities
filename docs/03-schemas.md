@@ -36,3 +36,11 @@ const schema = {
 Each entity is mapped to a sql table. See next section [#04 Types supported](/docs/04-types.md) to check types currently supported and how they are mapped to specific engines supported.
 
 [Next - #04 Supported types](/docs/04-types.md) 
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)

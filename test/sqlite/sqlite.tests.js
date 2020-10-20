@@ -169,4 +169,33 @@ describe( 'Sqlite Redentities tests', () => {
 
         assert.isString( newId );
     });
+
+    it( '# Mysql RenameSchemaEntities', async() => {
+        let entityName = TableEntityShortId();
+        let sufix = "_n";
+
+        let schema = {
+            entities: [
+                {   name: entityName,
+                    fields: [
+                        { name: "Name", type: "string" },
+                        { name: "Age", type : "integer" }
+                    ] 
+                }   
+            ]
+        }
+
+        let db = RedEntities.Entities( schema );
+        await db.CreateSchema();
+
+        assert.isTrue( await db.ExistsSchema() );
+
+        await db.RenameSchemaEntities( sufix );
+
+        assert.isTrue(await db.ExistsTable( entityName+sufix ));
+    });
+
+    it( '# Sqlite Exists database', async() => {
+        assert.isTrue( await db.ExistsDatabase( RedEntitiesConfig.database ) );
+    })
 });

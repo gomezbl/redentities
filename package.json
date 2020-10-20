@@ -1,6 +1,6 @@
 {
   "name": "redentities",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "description": "Simple & fast ORM and query builder, MySql, Sqlite AWS RDS mysql based databases supported",
   "main": "lib/redentities.js",
   "scripts": {

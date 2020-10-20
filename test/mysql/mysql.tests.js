@@ -135,7 +135,7 @@ describe( 'Mysql Redentities tests', () => {
 
         assert.isTrue(exists);
     });
-
+    
     it( '# Mysql check entities populated', async () => {
         let testSchema = {
             entities: [
@@ -163,5 +163,34 @@ describe( 'Mysql Redentities tests', () => {
         let newId = db.NewId();
 
         assert.isString( newId );
+    });
+
+    it( '# Mysql RenameSchemaEntities', async() => {
+        let entityName = EntityShortId();
+        let sufix = "_n";
+
+        let schema = {
+            entities: [
+                {   name: entityName,
+                    fields: [
+                        { name: "Name", type: "string" },
+                        { name: "Age", type : "integer" }
+                    ] 
+                }   
+            ]
+        }
+
+        let db = RedEntities.Entities( schema );
+        await db.CreateSchema();
+
+        assert.isTrue( await db.ExistsSchema() );
+
+        await db.RenameSchemaEntities( sufix );
+
+        assert.isTrue(await db.ExistsTable( entityName+sufix ));
+    });
+
+    it( '# Mysql Exists database', async() => {
+        assert.isTrue( await db.ExistsDatabase( RedEntitiesConfig.database ) );
     });
 });

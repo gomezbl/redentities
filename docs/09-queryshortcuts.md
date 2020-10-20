@@ -25,3 +25,11 @@ Selectors are properties of entity instance of db object; in the sample, there's
 * db.users.D()
 
 [Next - #10 Inserting values](/docs/10-insert.md)
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)

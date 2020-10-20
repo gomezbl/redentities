@@ -26,6 +26,8 @@ describe( 'Sqlite Redentities delete tests', () => {
     it( '# Sqlite Delete simple entity by ID', async () => {
         let user = await insertSampleUserEntity();
         await db.Delete("users").DeleteById( user.ID );
+
+        assert.equal( 0, await db.users.S().W("ID=?", user.ID).C() );
     });
 
     it( '# Sqlite Delete simple entity by field', async () => {

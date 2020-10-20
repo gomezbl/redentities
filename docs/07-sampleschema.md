@@ -31,3 +31,11 @@ const db = RedEntities.Entities(sampleSchema);
 ```
 
 [Next #08 Creating schemas](/docs/08-schemascreation.md)
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)

@@ -85,3 +85,11 @@ entities = await db.uses.S().OB("created").L(10,10).R();
 ```
 
 [Next - #12 Updating values](/docs/12-update.md)
+
+#### Credits
+
+`RedEntities` has been fully written by  [Rafael Gómez Blanes](https://github.com/gomezbl)
+
+Professional site at [Rafablanes.com](https://www.rafablanes.com)
+
+Have a look to my books at [Rafa G. Blanes books](https://www.rafablanes.com/mislibros)
