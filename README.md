@@ -9,7 +9,7 @@
 
 ## What it is?
 
-Red Entities is a simple but flexible and fast ORM and sql query builder.
+Red Entities is a simple but flexible and fast OM (object mapper) and sql query builder.
 
 Red Entities is focused on minimal typing when accesing data and the definition of database models using schemas (simple json objects).
 
