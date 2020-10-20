@@ -8,6 +8,6 @@
         },
     "sqliteproviderconfig": {
         "provider": "sqlite", 
-        "databasepath" : "/home/rgb/redentitiestest.db"
+        "databasepath" : "./redentitiestest.db"
     }
 }
