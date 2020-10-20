@@ -1,9 +1,11 @@
+
 # Red Entities
+![RedEntities logo](./docs/logo/redentities-logo-320.png)
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/jprichardson/node-fs-extra/blob/master/LICENSE)
 
-What it is?
+## What it is?
 
 Red Entities is a simple but flexible and fast ORM and sql query builder.
 
@@ -103,7 +105,7 @@ let userEntity = await db.users.S().SingleById(userId);
 - [#01 Introduction](/docs/01-introduction.md)
 - [#02 Providers config](/docs/02-providers.md)
 - [#03 Defining schemas](/docs/03-schemas.md)
-- [#04 Types supported](/docs/04-types.md)
+- [#04 Supported types](/docs/04-types.md)
 - [#05 Indexes](/docs/05-indexes.md)
 - [#06 Rows ids](/docs/06-ids.md)
 - [#07 Sample schema](/docs/07-sampleschema.md)
@@ -117,7 +119,7 @@ let userEntity = await db.users.S().SingleById(userId);
 
 ## Credits
 
-`Red Entities` has been fully written by:
+`RedEntities` has been fully written by:
 
 - [Rafael Gómez Blanes](https://github.com/gomezbl)
 
