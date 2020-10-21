@@ -1,7 +1,7 @@
 {
   "name": "redentities",
   "version": "1.3.1",
-  "description": "Simple & fast OM (object mapper) and query builder, MySql, Sqlite AWS RDS mysql based databases supported",
+  "description": "Simple & fast object-mapper & query builder, MySql, Sqlite AWS RDS mysql based databases supported",
   "main": "lib/redentities.js",
   "scripts": {
     "test": "mocha test/sqlite && mocha test/mysql"

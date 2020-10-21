@@ -1,6 +1,6 @@
 ## #01 Introduction
 
-Red Entities is a simple OM (object mapper) and sql builder for building quickly model schemas and accessing data with fast and minimal code.
+Red Entities is a simple object-mapper & sql builder for building quickly model schemas and accessing data with fast and minimal code.
 
 It has been design with optimization and extensibility in mind. Future versions will improve and add more database providers.
 
@@ -22,7 +22,7 @@ Is some kind of analytics should be performed over data, then these data should 
 
 The way you explote your data, determines the way it should be stored.
 
-This project is part of Mantra Framework, which uses fully Red Entities as its OM layer to build its components.
+This project is part of Mantra Framework, which uses fully Red Entities as its object-mapper data access layer to build its components.
 
 [Next - #02 Providers config](/docs/02-providers.md)
 

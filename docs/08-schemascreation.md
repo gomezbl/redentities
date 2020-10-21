@@ -34,7 +34,7 @@ db.users.I().V( { mail: "foo@foo.com", password: "12345" } ).R();
 
 In db instance, there's a property with the name of the entity (in this case 'users').
 
-Remember: the purpose of Red Entities is to isolate database engines (as it do all OM) and to provide a way to type sql sentences in a fast and smarter way.
+Remember: the purpose of Red Entities is to isolate database engines (as it do all ORMs) and to provide a way to type sql sentences in a fast and smarter way.
 
 [Next - #09 Query shortcuts](/docs/09-queryshortcuts.md)
 

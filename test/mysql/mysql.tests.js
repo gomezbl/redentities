@@ -1,6 +1,7 @@
 const assert = require("chai").assert;
 const ShortId = require("shortid");
 
+console.log( "XXX", process.argv[3] );
 const RedEntitiesConfig = require("../providersconfig.json").mysqlproviderconfig;
 const testSchema = require("../testschema.json");
 
