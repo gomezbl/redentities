@@ -8,15 +8,15 @@ const config = {
 }
 
 const UsersSchema = {
-    "entities" : [
+    entities : [
         {
-            "name" : "users",
-            "fields": [
-                { "name" : "mail", "type" : "string" },
-                { "name" : "password", "type" : "string" },
-                { "name" : "created", "type" : "datetime"}
+            name : "users",
+            fields: [
+                { name : "mail", type : "string" },
+                { name : "password", type : "string" },
+                { name : "created", type : "datetime"}
             ],
-            "indexes": [ ["mail"], ["created"] ]
+            indexes: [ ["mail"], ["created"] ]
         }
     ]
 };

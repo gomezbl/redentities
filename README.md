@@ -132,7 +132,8 @@ node /demos/<demo name.js>
 
 [01-inserts-sample](/demos/01-inserts-sample.js) : Insert and retrieve basic values
 [02-insert-and-iterate](/demos/02-insert-and-iterate.js) : Insert a bulk of values and iterates over them
-[03-insert-and-deleteall](/demos/02-insert-and-deleteall.js) : Insert a bulk of values and removed them
+[03-insert-and-deleteall](/demos/03-insert-and-deleteall.js) : Insert a bulk of values and removed them
+[04-json-type](/demos/04-json-type.js) : Insert a bulk of json objects and retrieve them
   
 #### Credits
 
