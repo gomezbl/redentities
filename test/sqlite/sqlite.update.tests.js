@@ -60,4 +60,20 @@ describe( 'Sqlite Redentities update tests', () => {
 
         assert.isString( sqlQuery );
     });
+
+    it( '# Sqlite update and check JSON stringified', async () => {
+        let v = [];
+        let values = { Name: JSON.stringify(v), Alias: v };
+        let id = await db.users.I().V( values ).R();
+
+        v.push("element");
+
+        await db.users.U().W("ID=?",id).V({ Name: JSON.stringify(v) }).R();
+
+        let entity = await db.users.S().SingleById(id);
+
+        let v2 = JSON.parse(entity.Name);
+
+        assert.equal(v[0], v2[0]);
+    });
 });
