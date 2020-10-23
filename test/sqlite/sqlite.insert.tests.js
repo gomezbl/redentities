@@ -158,4 +158,15 @@ describe( 'Sqlite Redentities insert tests', () => {
 
         assert.isString( sqlQuery );
     });
+
+    it( '# Sqlite insert and check JSON stringified', async () => {
+        let v = ["admin"];
+        let values = { Name: JSON.stringify(v), Alias: v };
+        let id = await db.users.I().V( values ).R();
+
+        let entity = await db.users.S().SingleById(id);
+        let v2 = JSON.parse(entity.Name);
+
+        assert.equal(v[0], v2[0]);
+    });
 });
