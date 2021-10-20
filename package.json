@@ -13,7 +13,7 @@
     "moment": "^2.29.1",
     "mysql2": "^2.3.2",
     "shortid": "^2.2.15",
-    "sqlite3": "^5.0.0",
+    "sqlite3": "^4.2.0",
     "underscore": "^1.11.0"
   },
   "repository": {
