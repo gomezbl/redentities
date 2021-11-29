@@ -1,6 +1,6 @@
 {
   "name": "redentities",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Simple & fast object-mapper & query builder, MySql, Sqlite AWS RDS mysql based databases supported",
   "main": "lib/redentities.js",
   "scripts": {
@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^10.0.0",
     "moment": "^2.29.1",
-    "mysql2": "^2.3.2",
+    "mysql2": "^2.3.3",
     "shortid": "^2.2.15",
-    "sqlite3": "^4.2.0",
-    "underscore": "^1.11.0"
+    "sqlite3": "^5.0.2",
+    "underscore": "^1.13.1"
   },
   "repository": {
     "type": "git",
